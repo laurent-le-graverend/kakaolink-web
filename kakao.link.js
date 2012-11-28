@@ -49,7 +49,7 @@ Copyright 2012 KAKAO
                 })(this.os);
                 
                 if (this.os == "ios") {
-                    setTimeout(install_block, 25);
+                    setTimeout(install_block, 35);
                     window.location = full_url;
                 } else if (this.os == "android") {
                     var iframe = document.createElement('iframe');

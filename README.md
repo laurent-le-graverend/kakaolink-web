@@ -135,7 +135,7 @@ appname		| String	| O		| Mobile Site 의 정확한 이름 | host(출처)로 이�
 urlinfo		| JSON Object | X 	| 스크랩 기능이 동작될 경우 원하는 정보를 보여주기 위한 설정 정보 | 아래 'urlinfo 설명' 참조 
 
 
-#### metainfo 설명
+#### urlinfo 설명
 
 파라미터 이름 	| 필수 여부 | 설명 				| 비고 
 ---			| ---		| ---					| --- 

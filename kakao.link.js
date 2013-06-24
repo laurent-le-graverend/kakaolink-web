@@ -23,7 +23,8 @@
             store: {
                 android: "market://details?id=com.kakao.talk",
                 ios: "http://itunes.apple.com/app/id362057947"
-            }
+            },
+            package: "com.kakao.talk"
         },
         story: {
             base_url: "storylink://posting?",
@@ -31,7 +32,8 @@
             store: {
                 android: "market://details?id=com.kakao.story",
                 ios: "http://itunes.apple.com/app/id486244601"
-            }
+            },
+            package: "com.kakao.story"
         }
     };
 
@@ -57,7 +59,7 @@
                     window.location = full_url;
                 } else if (this.os == "android") {
                     if (this.browser == "android+chrome") {
-                        window.location = "intent:" + full_url + "#Intent;package=com.kakao.talk;end;";
+                        window.location = "intent:" + full_url + "#Intent;package=" + _app.package + ";end;";
                     } else {
                         var iframe = document.createElement('iframe');
                         iframe.style.visibility = 'hidden';
@@ -79,6 +81,5 @@
             }
             return stripped.join("&");
         }
-
     };
 }(window));

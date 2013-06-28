@@ -55,7 +55,8 @@
                 })(this.os);
 
                 if (this.os == "ios") {
-                    setTimeout(install_block, 35);
+                    var timer = setTimeout(install_block, 2 * 1000);
+                    window.addEventListener('pagehide', clearTimer(timer));
                     window.location = full_url;
                 } else if (this.os == "android") {
                     if (this.browser == "android+chrome") {
@@ -80,6 +81,13 @@
                 stripped.push(k + "=" + encodeURIComponent(params[k]));
             }
             return stripped.join("&");
+        }
+
+        function clearTimer(timer) {
+            return function () {
+                clearTimeout(timer);
+                window.removeEventListener('pagehide', arguments.callee);
+            }
         }
     };
 }(window));

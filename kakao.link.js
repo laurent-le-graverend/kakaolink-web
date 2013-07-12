@@ -78,7 +78,9 @@
         function serialized(params) {
             var stripped = [];
             for (var k in params) {
-                stripped.push(k + "=" + encodeURIComponent(params[k]));
+                if (params.hasOwnProperty(k)) {
+                    stripped.push(k + "=" + encodeURIComponent(params[k]));
+                }
             }
             return stripped.join("&");
         }
@@ -87,7 +89,7 @@
             return function () {
                 clearTimeout(timer);
                 window.removeEventListener('pagehide', arguments.callee);
-            }
+            };
         }
     };
 }(window));

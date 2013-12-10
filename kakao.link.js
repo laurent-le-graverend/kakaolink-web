@@ -63,7 +63,7 @@
                         window.location = "intent:" + full_url + "#Intent;package=" + _app.package + ";end;";
                     } else {
                         var iframe = document.createElement('iframe');
-                        iframe.style.disply = 'none';
+                        iframe.style.display = 'none';
                         iframe.src = full_url;
                         iframe.onload = install_block;
                         document.body.appendChild(iframe);
